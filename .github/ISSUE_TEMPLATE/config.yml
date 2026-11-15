@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Question or chat
+    url: https://discord.gg/ipv6
+    about: Ask on Discord if you are not sure it is a bug, or just want to talk it over.

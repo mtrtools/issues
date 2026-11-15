@@ -1,0 +1,77 @@
+name: Bug report
+description: Something on mtr.tools is broken or behaves wrongly
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. This repository is public: do not paste API tokens, probe keys or sign-in links.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Where is the problem?
+      options:
+        - Website (mtr.tools)
+        - Running a test (ping, MTR, traceroute, DNS, BGP)
+        - Global Ping
+        - API
+        - Probe agent or probe install
+        - Hosted looking glass
+        - Account or sign-in
+        - Something else
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What you saw, including any error message exactly as shown.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: How can we reproduce it?
+      description: The steps you took. For a test, include the target, the test type and the probes you picked.
+      placeholder: |
+        1. Open https://mtr.tools/
+        2. Enter 1.1.1.1 and choose MTR
+        3. Pick a probe in Frankfurt and press Run
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: Share link
+      description: If a result is involved, press Share on it and paste the link (https://mtr.tools/r/...).
+    validations:
+      required: false
+  - type: input
+    id: when
+    attributes:
+      label: When did it happen?
+      description: Date and time with time zone, as close as you can. It lets us find it in the logs.
+      placeholder: 2026-11-15 19:30 UTC
+    validations:
+      required: false
+  - type: input
+    id: environment
+    attributes:
+      label: Browser or client
+      description: Browser and version for the website. For the API, the tool you call it with. For a probe, the operating system and Docker version.
+      placeholder: Firefox 143 on macOS
+    validations:
+      required: false
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else?
+      description: Screenshots, console errors, or `docker logs mtrtools-agent` output for probe problems.
+    validations:
+      required: false
